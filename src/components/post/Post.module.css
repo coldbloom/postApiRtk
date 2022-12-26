@@ -1,0 +1,23 @@
+.trashIcon {
+
+}
+
+.trashBox {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.descriptionBox {
+    width: 90%;
+}
+
+@media (min-width: 1024px) {
+    .descriptionBox {
+        width: 96%;
+    }
+    .trashBox {
+        width: 4%;
+    }
+}
