@@ -24,7 +24,6 @@ const Index = () => {
                       )
                     : <h2>loading</h2>
             }
-            <p>{posts.length}</p>
         </div>
     );
 };

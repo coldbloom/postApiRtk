@@ -2,6 +2,7 @@ import React from 'react';
 import {FaHeart} from 'react-icons/fa'
 import {FaTrashAlt} from 'react-icons/fa'
 import s from './Post.module.css'
+import {deletePost} from "../../store/slices/postSlice";
 
 const Post = ({id, title, liked, description, num}) => {
     return (
@@ -20,7 +21,7 @@ const Post = ({id, title, liked, description, num}) => {
                 <div className={s.trashBox}>
                     <FaTrashAlt
                         size={22}
-                        //onClick={() => deletePost(id)}
+                        onClick={() => deletePost(id)}
                     />
                 </div>
             </div>

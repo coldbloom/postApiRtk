@@ -5,8 +5,10 @@ import {useSelector, useDispatch} from "react-redux";
 function App() {
 
     return (
-        <div>
-            <Posts />
+        <div className='w-full mr-auto ml-auto flex justify-center'>
+            <div className='container'>
+                <Posts />
+            </div>
         </div>
     );
 }
