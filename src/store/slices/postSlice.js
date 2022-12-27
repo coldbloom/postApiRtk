@@ -13,9 +13,8 @@ export const fetchPosts = createAsyncThunk(
 export const deletePost = createAsyncThunk(
     'post/deletePost',
     async (id) => {
-        const res = await fetch(`https://5fb3db44b6601200168f7fba.mockapi.io/api/posts/${id}`)
-        const data = await res.json()
-        return data
+        const res = await axios.delete(`https://5fb3db44b6601200168f7fba.mockapi.io/api/posts/${id}`)
+        return res.data
     }
 )
 
@@ -35,7 +34,8 @@ const postSlice = createSlice({
         });
 
         builder.addCase(deletePost.fulfilled, (state, action) => {
-            state.posts = action.payload
+            console.log(state, action)
+            state.posts = state.posts.filter(post => post.id !== action.payload.id)
         });
     },
 })

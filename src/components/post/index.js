@@ -3,8 +3,10 @@ import {FaHeart} from 'react-icons/fa'
 import {FaTrashAlt} from 'react-icons/fa'
 import s from './Post.module.css'
 import {deletePost} from "../../store/slices/postSlice";
+import {useDispatch} from "react-redux";
 
 const Post = ({id, title, liked, description, num}) => {
+    const dispatch = useDispatch()
     return (
         <div className='py-5 lg:px-10 px-2'>
             <div className='flex flex-row px-2'>
@@ -21,7 +23,7 @@ const Post = ({id, title, liked, description, num}) => {
                 <div className={s.trashBox}>
                     <FaTrashAlt
                         size={22}
-                        onClick={() => deletePost(id)}
+                        onClick={() => dispatch(deletePost(id))}
                     />
                 </div>
             </div>
