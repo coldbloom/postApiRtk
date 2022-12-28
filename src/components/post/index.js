@@ -2,7 +2,7 @@ import React from 'react';
 import {FaHeart} from 'react-icons/fa'
 import {FaTrashAlt} from 'react-icons/fa'
 import s from './Post.module.css'
-import {deletePost} from "../../store/slices/postSlice";
+import {deletePost, editLikePost} from "../../store/slices/postSlice";
 import {useDispatch} from "react-redux";
 
 const Post = ({id, title, liked, description, num}) => {
@@ -31,7 +31,7 @@ const Post = ({id, title, liked, description, num}) => {
                 <FaHeart
                     size={22}
                     color={liked ? "red" : "black"}
-                    //onClick={() => handleLikeChange(id)}
+                    onClick={() => dispatch(editLikePost(id, {title: title, description: description, liked: !liked,}))}
                 />
             </div>
         </div>

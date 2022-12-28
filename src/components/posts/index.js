@@ -14,6 +14,7 @@ const Index = () => {
 
     return (
         <div>
+
             {
                 posts.length !== 0
                     ? posts.map((post, num) =>
